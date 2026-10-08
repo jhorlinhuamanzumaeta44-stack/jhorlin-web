@@ -1,4 +1,4 @@
-const products=[{id:1,name:"JHOKA SNACK CLÁSICO",desc:"Chifle crocante de plátano",price:6,imageBase:"images/chifle-clasico"},{id:2,name:"JHOKA SNACK ESPECIAL",desc:"Sabor intenso y extra crocante",price:7,imageBase:"images/chifle-especial"},{id:3,name:"JHOKA SNACK PICANTE",desc:"El toque que eleva el sabor",price:7.5,imageBase:"images/chifle-picante"}];
+const products=[{id:1,name:"JHOKA SNACK CLÁSICO",desc:"Chifle crocante de plátano",price:6,imageBase:"chifle-clasico"},{id:2,name:"JHOKA SNACK ESPECIAL",desc:"Sabor intenso y extra crocante",price:7,imageBase:"images/chifle-especial"},{id:3,name:"JHOKA SNACK PICANTE",desc:"El toque que eleva el sabor",price:7.5,imageBase:"images/chifle-picante"}];
 const imageExtensions=["png","jpg","jpeg","webp"];
 let cart=JSON.parse(localStorage.getItem("jhokaCart")||"[]");const $=s=>document.querySelector(s);
 function findImage(base,callback){let i=0;function tryNext(){if(i>=imageExtensions.length){callback("");return}const src=base+"."+imageExtensions[i++],img=new Image();img.onload=()=>callback(src);img.onerror=tryNext;img.src=src}tryNext()}
